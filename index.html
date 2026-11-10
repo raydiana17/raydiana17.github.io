@@ -230,6 +230,9 @@ section.contact{min-height:70svh}
   .tab,.folder,.index a{transition:none}
   .js section:not(.on) .folder{transform:none}
 }
+.tab span.two{white-space:normal;line-height:1.05;text-align:center}
+.tab span.two i{font-style:normal}
+@media (max-width:640px){.tab span.two .lg{display:none}}
 </style>
 </head>
 <body>
@@ -239,7 +242,7 @@ section.contact{min-height:70svh}
 <nav class="rail" aria-label="Кейсы">
   <button class="tab" data-k="intro"><span data-en="About">Обо мне</span></button>
   <button class="tab" data-k="tele"><span data-en="Subscription">Подписка</span></button>
-  <button class="tab" data-k="karma"><span data-en="Karma">Карма</span></button>
+  <button class="tab" data-k="karma"><span class="two" data-en="&lt;i class=lg&gt;Mobile&lt;br&gt;&lt;/i&gt;app"><i class="lg">Мобильное<br></i>приложение</span></button>
   <button class="tab" data-k="hire"><span data-en="Funnel">Воронка</span></button>
   <button class="tab" data-k="event"><span data-en="Event">Ивент</span></button>
   <button class="tab" data-k="more"><span data-en="More">Ещё</span></button>
@@ -262,12 +265,12 @@ section.contact{min-height:70svh}
         <a class="btn" id="cv" href="resume.pdf" data-href-ru="resume.pdf" data-href-en="resume-en.pdf" target="_blank" rel="noopener" data-en="Resume (PDF)">Резюме (PDF)</a>
       </div>
       <div class="facts">
-        <div class="fact"><small data-en="Experience">Опыт</small><b data-en="5 years">5 лет</b><span data-en="Bachelor’s, Business Informatics">высшее, бизнес-информатика</span></div>
-        <div class="fact"><small data-en="Budgets">Бюджеты</small><b data-en="$23.5K+">2 млн ₽+</b><span data-en="per month, per project">в месяц на проект</span></div>
-        <div class="fact"><small data-en="Revenue">Выручка</small><b data-en="$1M+">88+ млн ₽</b><span data-en="of the products I drove growth for">продуктов, где я вела рост</span></div>
+        <div class="fact"><small data-en="Experience">Опыт</small><b data-en="5 years">5 лет</b><span data-en="in acquisition">в привлечении</span><span data-en="Bachelor’s, Business Informatics">высшее, бизнес-информатика</span></div>
+        <div class="fact"><small data-en="Ad budget">Рекламный бюджет</small><b data-en="$23.5K+">2 млн ₽+</b><span data-en="per month, per project">в месяц на проект</span></div>
+        <div class="fact"><small data-en="Revenue">Выручка</small><b data-en="$1M+">88+ млн ₽</b><span data-en="of products where I owned acquisition">продуктов, где я отвечала за привлечение</span></div>
       </div>
       <div class="chips">
-        <span class="chip" data-en="Subscriptions">Подписки</span><span class="chip" data-en="Mobile apps">Мобильные приложения</span><span class="chip" data-en="Online services (eSIM, domains, hosting)">Онлайн-сервисы (eSIM, домены, хостинг)</span><span class="chip" data-en="Fintech">Финтех</span><span class="chip" data-en="Telegram products">Telegram-продукты</span><span class="chip">E-com</span>
+        <span class="chip" data-en="Subscriptions">Подписки</span><span class="chip" data-en="Mobile apps">Мобильные приложения</span><span class="chip" data-en="Online services">Онлайн-сервисы</span><span class="chip" data-en="Fintech">Финтех</span><span class="chip" data-en="Telegram products">Telegram-продукты</span><span class="chip">E-com</span>
       </div>
       <div class="index">
         <a href="#tele" style="--c:var(--c-tele)"><b data-en="×7.5 &lt;em&gt;revenue&lt;/em&gt;">×7,5 <em>выручка</em></b><span data-en="of a subscription service in a year">подписочного сервиса за год</span></a>
@@ -309,33 +312,17 @@ section.contact{min-height:70svh}
         <div class="m"><b data-en="×1.9">×1,9</b><small data-en="revenue per active user: from 3.9 to 7.6 ₽">выручка на активного пользователя: 3,9 → 7,6 ₽</small></div>
         <div class="m"><b>+40%</b><small data-en="one-off purchases after the free tier was reworked">разовых покупок после пересборки фритриала</small></div>
       </div>
-            <p class="sub3" data-en="Experiments: hypothesis → change → result">Эксперименты: гипотеза → что поменяли → результат</p>
-      <div class="exps">
-        <div class="exp"><span class="n" data-en="01 · Analytics">01 · Аналитика</span><h4 data-en="Initiated end-to-end product analytics">Инициировала сквозную продуктовую аналитику</h4><dl>
-          <div><dt data-en="Problem">Проблема</dt><dd data-en="The team didn’t know the funnel, where paying users came from, LTV or the effect of its changes">Команда не знала воронку, источники платящих, LTV и эффект своих изменений</dd></div>
-          <div><dt data-en="What changed">Что сделали</dt><dd data-en="Analytics from first launch to payment: sources, cohorts, LTV and the revenue impact of every change">Аналитика от первого запуска до оплаты: источники, когорты, LTV, вклад каждого изменения в выручку</dd></div>
-          <div><dt data-en="Result">Результат</dt><dd class="res" data-en="The first review caught a double-charging bug and set the base for every later decision">Первый же разбор нашёл баг с двойными списаниями; появилась база для всех следующих решений</dd></div>
-        </dl></div>
-        <div class="exp"><span class="n" data-en="02 · Free tier">02 · Фритриал</span><h4 data-en="Reworked the free tier based on demand data">Пересобрала фритриал на основе анализа спроса</h4><dl>
-          <div><dt data-en="Data">Данные</dt><dd data-en="Only ~2% of active users ever hit the free limit, so almost nobody had a reason to pay">В бесплатный лимит упирались ~2% активных — повода платить почти ни у кого не было</dd></div>
-          <div><dt data-en="Hypothesis">Гипотеза</dt><dd data-en="Cut the limit so the value of the paid plan is felt sooner">Урезать лимит, чтобы ценность платной версии ощущалась раньше</dd></div>
-          <div><dt data-en="Result">Результат</dt><dd class="res" data-en="One-off purchases +40% (≈ +55K ₽ a month), weekly revenue +10% while inflow fell 8%">Разовые покупки +40% (≈ +55 тыс. ₽ в месяц), недельная выручка +10% при снижении притока на 8%</dd></div>
-        </dl></div>
-        <div class="exp"><span class="n" data-en="03 · Pricing">03 · Тарифы</span><h4 data-en="Made the case for a pricing ladder">Обосновала тарифную линейку</h4><dl>
-          <div><dt data-en="Hypothesis">Гипотеза</dt><dd data-en="Users differ in willingness to pay, and one plan can’t cover it">У пользователей разная готовность платить — одна подписка её не покрывает</dd></div>
-          <div><dt data-en="What changed">Что сделали</dt><dd data-en="Tiers for different segments instead of a single plan">Тарифы под разные сегменты вместо одной подписки</dd></div>
-          <div><dt data-en="Result">Результат</dt><dd class="res" data-en="New tiers bring a third of revenue; 30-day payer LTV +20–40%">Новые тарифы дают треть выручки, LTV плательщика за 30 дней +20–40%</dd></div>
-        </dl></div>
-        <div class="exp"><span class="n" data-en="04 · Auto-renewal">04 · Автопродление</span><h4 data-en="Took part in launching subscription auto-renewal">Участвовала в запуске автопродления подписки</h4><dl>
-          <div><dt data-en="What changed">Что сделали</dt><dd data-en="The subscription renews automatically instead of a manual payment every period">Подписка продлевается автоматически вместо ручной оплаты каждый период</dd></div>
-          <div><dt data-en="Result">Результат</dt><dd class="res" data-en="Renewals 0 → 290K ₽ a month, 90-day payer LTV ×1.9 — the strongest growth lever">Продления 0 → 290 тыс. ₽ в месяц, LTV плательщика за 90 дней ×1,9 — самый сильный рычаг роста</dd></div>
-        </dl></div>
+            <div class="cols">
+        <div><h3 data-en="Challenge">Задача</h3><p data-en="Grow revenue by monetizing the existing audience rather than buying traffic, and give the team numbers to base decisions on.">Вырастить выручку за счёт монетизации существующей аудитории, а не покупки трафика, и дать команде цифры для решений.</p></div>
+        <div><h3 data-en="What I did">Что сделала</h3><ul>
+          <li data-en="Initiated end-to-end product analytics: funnel, cohorts, LTV and the effect of every change">Инициировала сквозную продуктовую аналитику: воронка, когорты, LTV и эффект каждого изменения</li>
+          <li data-en="Took part in launching subscription auto-renewal">Участвовала в запуске автопродления подписки</li>
+          <li data-en="Reworked the free tier based on demand data">Пересобрала фритриал на основе анализа спроса</li>
+          <li data-en="Made the case for a pricing ladder">Обосновала тарифную линейку</li>
+        </ul></div>
+        <div><h3 data-en="Result">Результат</h3><p data-en="Revenue grew 7.5× in a year, payer LTV nearly doubled, and the new tiers now bring a third of revenue. Growth came from monetizing the existing base, without extra traffic.">Выручка за год выросла в 7,5 раза, LTV плательщика — почти вдвое, новые тарифы дают треть выручки. Рост пришёл из монетизации существующей базы, без дополнительного трафика.</p></div>
       </div>
-      <div class="total" data-en="&lt;b&gt;Result:&lt;/b&gt; monthly revenue 91K → 680K ₽ (peak 754K), paying users per month +63%, revenue per payer +20%. All from monetizing the existing base: new-user inflow shrank over the same period. ×7.5 is the combined effect of all changes; each one’s contribution is shown in the cards above."><b>Итог:</b> выручка 91 → 680 тыс. ₽ в месяц (пик 754 тыс.), платящих в месяц +63%, доход с платящего +20%. Всё за счёт монетизации базы: приток новых пользователей за это время сократился. ×7,5 — совокупный эффект всех изменений; вклад каждого показан в карточках выше.</div>
-      <div class="foot">
-        <span>2025–2026</span>
-        <span class="fn" data-en="Product under NDA. Figures from product analytics and payment data; payer metrics are compared from Feb 2026, when analytics went live.">Продукт под NDA. Цифры — по данным продуктовой аналитики и платёжной системы; метрики платящих сравниваются с февраля 2026, когда заработала аналитика.</span>
-      </div>
+      <div class="foot"><span>2025–2026</span></div>
     </article>
   </section>
 
@@ -405,7 +392,7 @@ section.contact{min-height:70svh}
       <div class="metrics three">
         <div class="m"><b>62%</b><small data-en="of all event attendees came from my channels">всех участников события — из моих каналов</small></div>
         <div class="m"><b>60%</b><small data-en="of followers reached the broadcast">подписчиков дошли до трансляции</small></div>
-        <div class="m"><b data-en="1,800+">1 800+</b><small data-en="followers brought in">привлечённых подписчиков</small></div>
+        <div class="m"><b data-en="2,200+">2 200+</b><small data-en="followers brought in">привлечённых подписчиков</small></div>
       </div>
     </article>
   </section>
