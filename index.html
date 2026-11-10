@@ -12,7 +12,7 @@
 :root{
   --paper:#eef0f2; --sheet:#fbfbfc; --ink:#16181d; --muted:#5b616e; --line:#d6dae0;
   --c-intro:#2b2f38; --c-karma:#17785a; --c-xiaomi:#d9581f; --c-forx:#3a46c4; --c-next:#8a8f99;
-  --tint-karma:#e3f1ec; --ok:#167a4a; --ok-bg:#dff2e7; --ok-ring:rgba(22,122,74,.25); --tint-xiaomi:#fbeae1; --tint-forx:#e6e8f9; --c-hire:#b02a63; --tint-hire:#f8e4ec; --c-event:#0b7285; --tint-event:#ddf0f3; --tint-intro:#e4e6ea;
+  --tint-karma:#e3f1ec; --ok:#167a4a; --ok-bg:#dff2e7; --ok-ring:rgba(22,122,74,.25); --tint-xiaomi:#fbeae1; --tint-forx:#e6e8f9; --c-hire:#b02a63; --tint-hire:#f8e4ec; --c-event:#0b7285; --tint-event:#ddf0f3; --c-tele:#8a5a00; --tint-tele:#f7eedb; --tint-intro:#e4e6ea;
   --display:"Unbounded", "Arial Black", system-ui, sans-serif;
   --body:"Onest", "Segoe UI", system-ui, sans-serif;
   --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
@@ -21,12 +21,12 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#111318; --sheet:#1a1d24; --ink:#eceef2; --muted:#a2a8b4; --line:#2c313b;
   --c-intro:#c9ccd3; --c-karma:#3fbf8f; --c-xiaomi:#f07c45; --c-forx:#7d88f2; --c-next:#6c717c;
-  --tint-karma:#15281f; --ok:#4fd08f; --ok-bg:#16301f; --ok-ring:rgba(79,208,143,.25); --tint-xiaomi:#2c1d15; --tint-forx:#1b1e33; --c-hire:#e8679b; --tint-hire:#2d1822; --c-event:#3bbcd1; --tint-event:#132a2e; --tint-intro:#1d2027;
+  --tint-karma:#15281f; --ok:#4fd08f; --ok-bg:#16301f; --ok-ring:rgba(79,208,143,.25); --tint-xiaomi:#2c1d15; --tint-forx:#1b1e33; --c-hire:#e8679b; --tint-hire:#2d1822; --c-event:#3bbcd1; --tint-event:#132a2e; --c-tele:#e0a93b; --tint-tele:#2a2214; --tint-intro:#1d2027;
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#111318; --sheet:#1a1d24; --ink:#eceef2; --muted:#a2a8b4; --line:#2c313b;
   --c-intro:#c9ccd3; --c-karma:#3fbf8f; --c-xiaomi:#f07c45; --c-forx:#7d88f2; --c-next:#6c717c;
-  --tint-karma:#15281f; --ok:#4fd08f; --ok-bg:#16301f; --ok-ring:rgba(79,208,143,.25); --tint-xiaomi:#2c1d15; --tint-forx:#1b1e33; --c-hire:#e8679b; --tint-hire:#2d1822; --c-event:#3bbcd1; --tint-event:#132a2e; --tint-intro:#1d2027;
+  --tint-karma:#15281f; --ok:#4fd08f; --ok-bg:#16301f; --ok-ring:rgba(79,208,143,.25); --tint-xiaomi:#2c1d15; --tint-forx:#1b1e33; --c-hire:#e8679b; --tint-hire:#2d1822; --c-event:#3bbcd1; --tint-event:#132a2e; --c-tele:#e0a93b; --tint-tele:#2a2214; --tint-intro:#1d2027;
   color-scheme:dark}
 
 html{scroll-behavior:smooth;scroll-snap-type:y proximity}
@@ -40,7 +40,7 @@ a{color:inherit}
   display:flex;flex-direction:column;justify-content:center;gap:6px;
   padding:calc(16px + env(safe-area-inset-top,0px)) 0 calc(16px + env(safe-area-inset-bottom,0px))}
 .tab{all:unset;cursor:pointer;position:relative;display:flex;align-items:center;justify-content:center;
-  width:44px;height:clamp(60px,11.5vh,118px);border-radius:0 12px 12px 0;
+  width:44px;height:clamp(54px,10.5vh,118px);border-radius:0 12px 12px 0;
   background:var(--c);color:#fff;transform:translateX(-10px);
   transition:transform .35s cubic-bezier(.2,.8,.2,1),width .35s,box-shadow .35s}
 .tab span{writing-mode:vertical-rl;transform:rotate(180deg);font:600 11px/1 var(--mono);
@@ -48,6 +48,7 @@ a{color:inherit}
 .tab:hover{transform:translateX(-4px)}
 .tab[aria-current="true"]{transform:translateX(0);width:60px;box-shadow:6px 0 18px -8px rgba(0,0,0,.35)}
 .tab[data-k="intro"]{--c:var(--c-intro);color:var(--paper)}
+.tab[data-k="tele"]{--c:var(--c-tele)}
 .tab[data-k="karma"]{--c:var(--c-karma)}
 .tab[data-k="xiaomi"]{--c:var(--c-xiaomi)}
 .tab[data-k="forx"]{--c:var(--c-forx)}
@@ -67,6 +68,7 @@ section.case{min-height:100svh}
 .folder::before{content:attr(data-label);position:absolute;left:-0px;top:-36px;height:36px;
   padding:0 22px;display:flex;align-items:center;background:var(--c);color:#fff;
   border-radius:12px 12px 0 0;font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.case[data-k="tele"]{--c:var(--c-tele);--tint:var(--tint-tele)}
 .case[data-k="karma"]{--c:var(--c-karma);--tint:var(--tint-karma)}
 .case[data-k="xiaomi"]{--c:var(--c-xiaomi);--tint:var(--tint-xiaomi)}
 .case[data-k="forx"]{--c:var(--c-forx);--tint:var(--tint-forx)}
@@ -206,6 +208,7 @@ section.contact{min-height:70svh}
 
 <nav class="rail" aria-label="Кейсы">
   <button class="tab" data-k="intro"><span data-en="About">Обо мне</span></button>
+  <button class="tab" data-k="tele"><span data-en="Subscription">Подписка</span></button>
   <button class="tab" data-k="karma"><span data-en="Karma">Карма</span></button>
   <button class="tab" data-k="xiaomi"><span>Xiaomi</span></button>
   <button class="tab" data-k="forx"><span>FORX</span></button>
@@ -253,6 +256,7 @@ section.contact{min-height:70svh}
         <span class="chip" data-en="Fintech">Финтех</span><span class="chip" data-en="Retail &amp; e-com">Ритейл и e-com</span><span class="chip" data-en="Healthcare">Медицина</span><span class="chip" data-en="Insurance">Страхование</span><span class="chip" data-en="Real estate">Недвижимость</span><span class="chip" data-en="HR &amp; hiring">HR и найм</span><span class="chip" data-en="Events">Ивенты</span><span class="chip">Beauty</span>
       </div>
       <div class="index">
+        <a href="#tele" style="--c:var(--c-tele)"><b data-en="×7.5">×7,5</b><span data-en="monthly revenue of a Telegram subscription service in a year">выручки подписочного сервиса в Telegram за год</span></a>
         <a href="#karma" style="--c:var(--c-karma)"><b data-en="25.8K">25,8 тыс.</b><span data-en="fintech app installs, CPI $0.88">установок финтех-приложения, CPI 74 ₽</span></a>
         <a href="#xiaomi" style="--c:var(--c-xiaomi)"><b data-en="$965K">82 млн ₽</b><span data-en="revenue from VK for a Xiaomi partner in 3 years">выручки из VK для партнёра Xiaomi за 3 года</span></a>
         <a href="#forx" style="--c:var(--c-forx)"><b>+211%</b><span data-en="Ozon sales growth for FORX in 5 months">к продажам бренда FORX на Ozon за 5 месяцев</span></a>
@@ -262,9 +266,39 @@ section.contact{min-height:70svh}
     </div>
   </section>
 
-  <!-- ===== Кейс 1: Карма ===== -->
+  <!-- ===== Кейс 1: Подписочный сервис в Telegram ===== -->
+  <section class="case" id="tele" data-k="tele">
+    <article class="folder" data-label="Кейс 01 · Подписка" data-en-label="Case 01 · Subscription">
+      <div class="niche" data-en="B2C subscription service · Telegram">B2C-сервис с подпиской · Telegram</div>
+      <h2 data-en="×7.5 monthly revenue in a year: analytics, free tier and pricing for a Telegram subscription service">Выручка ×7,5 за год: аналитика, фритриал и тарифы для подписочного сервиса в Telegram</h2>
+      <p class="lede" data-en="A B2C service in Telegram with 90–105K monthly active users, growing almost without ads, through viral links. For two years the product had no metrics at all, and revenue had flatlined.">B2C-сервис в Telegram с подпиской: 90–105 тыс. активных пользователей в месяц, рост почти без рекламы — на вирусных ссылках. Два года у продукта не было ни одной метрики, выручка стояла на месте.</p>
+      <div class="kit"><div class="mis"><i class="mi tg" title="Telegram"></i></div><div class="feat"><span data-en="product analytics">продуктовая аналитика</span><span data-en="monetization">монетизация</span><span data-en="pricing tiers">тарифная линейка</span><span data-en="A/B tests">A/B-тесты</span></div></div>
+      <div class="metrics">
+        <div class="m"><b data-en="×7.5">×7,5</b><small data-en="monthly revenue: from $1.1K to $8K (Sep 2025 → Oct 2026)">выручка в месяц: 91 тыс. → 680 тыс. ₽ (сен 2025 → окт 2026)</small></div>
+        <div class="m"><b data-en="×1.9">×1,9</b><small data-en="LTV of a paying user over 90 days after auto-renewal">LTV плательщика за 90 дней после запуска автопродления</small></div>
+        <div class="m"><b data-en="×1.9">×1,9</b><small data-en="revenue per active user: from 3.9 to 7.6 ₽">выручка на активного пользователя: 3,9 → 7,6 ₽</small></div>
+        <div class="m"><b>+40%</b><small data-en="one-off purchases after the free tier was reworked">разовых покупок после пересборки фритриала</small></div>
+      </div>
+      <div class="cols">
+        <div><h3 data-en="Challenge">Задача</h3><p data-en="The team didn’t know the funnel, where paying users came from, LTV or the effect of any change. Revenue had stalled at about 90K ₽ a month. The goal: grow revenue by monetizing the existing audience, not by buying traffic.">Команда не знала ни воронку, ни источники платящих, ни LTV, ни эффект своих изменений. Выручка застряла на ~90 тыс. ₽ в месяц. Задача — вырастить деньги за счёт монетизации аудитории, а не покупки трафика.</p></div>
+        <div><h3 data-en="What I did">Что сделала</h3><ul>
+          <li data-en="&lt;b&gt;Initiated end-to-end product analytics:&lt;/b&gt; funnel from first launch to payment, user sources, cohorts, LTV and the revenue impact of every change. The first review also caught a double-charging bug"><b>Инициировала сквозную продуктовую аналитику:</b> воронка от первого запуска до оплаты, источники, когорты, LTV и вклад каждого изменения в выручку. Первый же разбор нашёл баг с двойными списаниями</li>
+          <li data-en="&lt;b&gt;Auto-renewal:&lt;/b&gt; took part in launching recurring subscriptions — renewals went from 0 to 290K ₽ a month, the strongest growth lever"><b>Автопродление подписки:</b> участвовала в запуске — продления выросли с 0 до 290 тыс. ₽ в месяц, это самый сильный рычаг роста</li>
+          <li data-en="&lt;b&gt;Reworked the free tier based on demand data:&lt;/b&gt; only ~2% of active users ever hit the free limit, so most had no reason to pay. Cutting the limit lifted one-off purchases by 40% (≈+55K ₽ a month) and weekly revenue by 10% while new-user inflow fell 8%"><b>Пересобрала фритриал на основе анализа спроса:</b> в бесплатный лимит упирались лишь ~2% активных — повода платить почти ни у кого не было. После урезания лимита разовые покупки выросли на 40% (≈+55 тыс. ₽ в месяц), недельная выручка — на 10% при снижении притока на 8%</li>
+          <li data-en="&lt;b&gt;Made the case for a pricing ladder:&lt;/b&gt; tiers for different willingness to pay instead of one plan. The new tiers now bring a third of revenue, and 30-day payer LTV grew by 20–40%"><b>Обосновала тарифную линейку:</b> тарифы под разную готовность платить вместо одной подписки. Новые тарифы дают треть выручки, LTV плательщика за 30 дней вырос на 20–40%</li>
+        </ul></div>
+        <div><h3 data-en="Result">Результат</h3><p data-en="Monthly revenue grew from 91K to 680K ₽ (peaking at 754K), paying users per month up 63%, average revenue per payer up 20%. All of it came from monetizing the existing base: new-user inflow actually shrank over the same period.">Выручка выросла с 91 тыс. до 680 тыс. ₽ в месяц (пик — 754 тыс.), платящих в месяц стало на 63% больше, доход с платящего вырос на 20%. Всё это — за счёт монетизации базы: приток новых пользователей за это время сократился.</p></div>
+      </div>
+      <div class="foot">
+        <span>2025–2026</span>
+        <span class="fn" data-en="Product under NDA. Figures from product analytics and payment data; payer metrics are compared from Feb 2026, when analytics went live.">Продукт под NDA. Цифры — по данным продуктовой аналитики и платёжной системы; метрики платящих сравниваются с февраля 2026, когда заработала аналитика.</span>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===== Кейс 2: Карма ===== -->
   <section class="case" id="karma" data-k="karma">
-    <article class="folder" data-label="Кейс 01 · Финтех" data-en-label="Case 01 · Fintech">
+    <article class="folder" data-label="Кейс 02 · Финтех" data-en-label="Case 02 · Fintech">
       <div class="niche" data-en="Fintech · mobile app">Финтех · мобильное приложение</div>
       <h2 data-en="Karma: 25,790 installs of a new fintech product in a market with no existing demand">Карма: 25 790 установок нового финтех-продукта на рынке без готового спроса</h2>
       <p class="lede" data-en="Launch of a financial health tracker by one of Russia’s largest credit bureaus. The brand is well known to banks but almost unknown to consumers, so the product went to market as a brand-new service.">Запуск трекера финансового здоровья от одного из крупнейших бюро кредитных историй. Бренд известен банкам, но почти незнаком обычным пользователям, поэтому продукт выводили как новый.</p>
@@ -293,7 +327,7 @@ section.contact{min-height:70svh}
 
   <!-- ===== Кейс 2: Xiaomi ===== -->
   <section class="case" id="xiaomi" data-k="xiaomi">
-    <article class="folder" data-label="Кейс 02 · Электроника" data-en-label="Case 02 · Electronics">
+    <article class="folder" data-label="Кейс 03 · Электроника" data-en-label="Case 03 · Electronics">
       <div class="niche" data-en="Electronics retail · Xiaomi franchisee">Ритейл электроники · франчайзи Xiaomi</div>
       <h2 data-en="From zero to $965K in revenue from VK for an offline Xiaomi store chain">С нуля до 82 млн ₽ выручки из «ВКонтакте» для офлайн-сети Xiaomi</h2>
       <p class="lede" data-en="Stores in 8 small cities, offline sales only with a 24-hour reservation. Competing with marketplaces and large retail chains amid aggressive price dumping.">Магазины в 8 небольших городах, продажи только офлайн с бронью на сутки. Конкуренция с маркетплейсами и крупными сетями при жёстком демпинге.</p>
@@ -322,7 +356,7 @@ section.contact{min-height:70svh}
 
   <!-- ===== Кейс 3: FORX ===== -->
   <section class="case" id="forx" data-k="forx">
-    <article class="folder" data-label="Кейс 03 · Beauty" data-en-label="Case 03 · Beauty">
+    <article class="folder" data-label="Кейс 04 · Beauty" data-en-label="Case 04 · Beauty">
       <div class="niche" data-en="Men’s cosmetics · marketplaces">Мужская косметика · маркетплейсы</div>
       <h2 data-en="FORX: 41M views and +211% Ozon sales in 5 months">FORX: 41 млн просмотров и +211% продаж на Ozon за 5 месяцев</h2>
       <p class="lede" data-en="A small brand against well-known competitors. The bet: viral absurdist content and the audience that buys men’s cosmetics most often, as a gift — women.">Небольшой бренд против известных конкурентов. Ставка на вирусный абсурдный контент и аудиторию, которая чаще всего покупает мужскую косметику в подарок, — женщин.</p>
@@ -350,7 +384,7 @@ section.contact{min-height:70svh}
 
   <!-- ===== Кейс 4: Найм ===== -->
   <section class="case" id="hire" data-k="hire">
-    <article class="folder" data-label="Кейс 04 · HR" data-en-label="Case 04 · HR">
+    <article class="folder" data-label="Кейс 05 · HR" data-en-label="Case 05 · HR">
       <div class="niche" data-en="HR · mass hiring">HR · массовый найм</div>
       <h2 data-en="Courier hiring: 2,000+ applications and 360 new hires through a 5-step funnel">Найм курьеров: 2 000+ откликов и 360 сотрудников через воронку из 5 этапов</h2>
       <p class="lede" data-en="A large delivery service hiring couriers at scale. Search ads were already running; the job was to scale the candidate flow and make sure people actually reached their first shift.">Крупный сервис доставки, массовый найм курьеров. Поиск у клиента уже работал, задача — масштабировать поток кандидатов и довести их до выхода на смену, а не только до отклика.</p>
@@ -375,7 +409,7 @@ section.contact{min-height:70svh}
 
   <!-- ===== Кейс 5: Ивент ===== -->
   <section class="case" id="event" data-k="event">
-    <article class="folder" data-label="Кейс 05 · Страхование" data-en-label="Case 05 · Insurance">
+    <article class="folder" data-label="Кейс 06 · Страхование" data-en-label="Case 06 · Insurance">
       <div class="niche" data-en="Insurance · online event">Страхование · онлайн-событие</div>
       <h2 data-en="Insurance online broadcast: 62% of all attendees came from my traffic">Онлайн-трансляция страховой компании: 62% всех участников пришли из моего трафика</h2>
       <p class="lede" data-en="A niche industry event for a professional audience. Several channels worked on it at once, and the goal was not a follow but getting the person all the way to the broadcast.">Узкоспециализированное событие для профессиональной аудитории. На него работало несколько каналов, а цель была не подписка, а дойти до самой трансляции.</p>
