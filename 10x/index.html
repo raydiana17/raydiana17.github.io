@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>10X FBS: новый лендинг</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --paper:#f4f5f7; --sheet:#ffffff; --ink:#14161b; --muted:#5c6270; --line:#dfe2e7;
+  --blue:#1f5fe0; --blue-tint:#e6eefc; --leak:#d9381e; --leak-tint:#fde9e4; --ok:#157a48; --ok-tint:#e0f3e8;
+  --ph:#8a6a00; --ph-tint:#fff6d8;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Onest","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0f1115; --sheet:#171a20; --ink:#eceef2; --muted:#a3a9b5; --line:#2a2f38;
+  --blue:#6f9cff; --blue-tint:#16223a; --leak:#ff7559; --leak-tint:#2e1814; --ok:#4fd08f; --ok-tint:#14281d;
+  --ph:#f0c35a; --ph-tint:#2b2410; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f1115; --sheet:#171a20; --ink:#eceef2; --muted:#a3a9b5; --line:#2a2f38;
+  --blue:#6f9cff; --blue-tint:#16223a; --leak:#ff7559; --leak-tint:#2e1814; --ok:#4fd08f; --ok-tint:#14281d;
+  --ph:#f0c35a; --ph-tint:#2b2410; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--body)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+
+/* test-task bar */
+.bar{position:sticky;top:0;z-index:20;background:var(--ink);color:var(--paper);font:500 13px/1 var(--mono)}
+.bar .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;height:44px}
+.bar nav{display:flex;gap:16px}
+.bar a{text-decoration:none;opacity:.85}.bar a:hover{opacity:1}
+@media (max-width:640px){.bar .who{display:none}}
+
+/* block tag (reviewer marker) */
+.tag{display:inline-flex;align-items:center;gap:8px;font:600 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);border:1px dashed var(--line);border-radius:99px;padding:6px 10px;text-decoration:none;margin-bottom:20px}
+.tag b{color:var(--blue)}
+
+section.blk{padding:72px 0;border-bottom:1px solid var(--line)}
+section.blk.alt{background:var(--sheet)}
+h1,h2{font-family:var(--display);letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(34px,5.2vw,60px);line-height:1.05;font-weight:800}
+h2{font-size:clamp(26px,3.4vw,40px);line-height:1.1;font-weight:800;margin-bottom:12px}
+.leak{color:var(--leak)}
+.lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:640px;margin:20px 0 0}
+.sub{color:var(--muted);max-width:640px;margin:0 0 36px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.eyebrow{font:600 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:18px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:12px;font:600 16px/1 var(--body);text-decoration:none;border:0;cursor:pointer}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.note{display:flex;gap:10px;align-items:flex-start;margin-top:16px;padding:12px 14px;border-radius:12px;background:var(--ok-tint);color:var(--ink);font-size:14px;max-width:560px}
+.note i{flex:none;width:8px;height:8px;border-radius:50%;background:var(--ok);margin-top:7px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px;font-size:14px;color:var(--muted)}
+.trust b{color:var(--ink)}
+
+/* morning summary card */
+.summary{background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 24px 60px -30px rgba(20,22,27,.35)}
+.summary header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.summary header b{font:700 15px/1.2 var(--body)}
+.summary header span{font:500 12px/1 var(--mono);color:var(--muted)}
+.leaks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lk{all:unset;cursor:pointer;display:block;padding:14px;border-radius:14px;background:var(--leak-tint);transition:transform .2s}
+.lk:hover{transform:translateY(-2px)}
+.lk .n{font:800 clamp(18px,2vw,22px)/1.1 var(--display);color:var(--leak);white-space:nowrap}
+.lk .t{display:block;font-size:13px;line-height:1.35;margin-top:6px;color:var(--ink)}
+.summary footer{font-size:12px;color:var(--muted);margin-top:12px}
+
+/* leaks explorer */
+.explorer{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
+@media (max-width:900px){.explorer{grid-template-columns:1fr}}
+.tabs{display:flex;flex-direction:column;gap:8px}
+@media (max-width:900px){.tabs{flex-direction:row;overflow-x:auto;padding-bottom:4px}}
+.tb{all:unset;cursor:pointer;display:block;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--sheet);min-width:200px}
+.tb .k{font:600 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tb .v{display:block;font:800 18px/1.2 var(--display);margin-top:8px;white-space:nowrap}
+.tb[aria-selected="true"]{border-color:var(--leak);background:var(--leak-tint)}
+.tb[aria-selected="true"] .v{color:var(--leak)}
+.panel{background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:24px}
+.panel h3{font:700 22px/1.25 var(--body);margin:0 0 8px}
+.panel p{margin:0 0 6px;color:var(--muted)}
+.panel .do{margin:14px 0 18px;padding:12px 14px;border-radius:12px;background:var(--blue-tint);font-size:15px}
+.panel .do b{color:var(--blue)}
+.shot{border-radius:12px;border:1px solid var(--line);overflow:hidden;background:var(--paper);aspect-ratio:1323/750}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.more{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;align-items:center}
+.more span{font-size:13px;padding:8px 12px;border-radius:99px;background:var(--sheet);border:1px solid var(--line)}
+.more em{font-style:normal;color:var(--muted);font-size:14px;margin-right:4px}
+
+/* compare */
+.cmp{width:100%;border-collapse:separate;border-spacing:0;background:var(--sheet);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.cmp th,.cmp td{text-align:left;padding:16px 18px;border-bottom:1px solid var(--line);vertical-align:top;font-size:15px}
+.cmp tr:last-child td{border-bottom:0}
+.cmp th{font:600 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--paper)}
+.cmp td:first-child{font-weight:600;width:38%}
+.cmp td:nth-child(2){color:var(--muted)}
+.cmp td:nth-child(3){color:var(--ok);font-weight:500}
+@media (max-width:700px){
+  .cmp thead{display:none}.cmp,.cmp tbody,.cmp tr,.cmp td{display:block;width:100%}
+  .cmp tr{border-bottom:1px solid var(--line);padding:6px 0}.cmp td{border:0;padding:6px 16px}
+  .cmp td:nth-child(2)::before{content:"Без 10X: ";font-weight:600}.cmp td:nth-child(3)::before{content:"В 10X: ";font-weight:600}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+@media (max-width:800px){.steps{grid-template-columns:1fr}}
+.step{background:var(--sheet);border:1px solid var(--line);border-radius:18px;padding:22px}
+.step::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font:700 15px/1 var(--body);margin-bottom:14px}
+.step h3{font:700 18px/1.3 var(--body);margin:0 0 6px}
+.step p{margin:0;color:var(--muted);font-size:15px}
+.step.go{border-color:var(--ok);background:var(--ok-tint)}
+.step.go::before{background:var(--ok)}
+
+/* trust + faq */
+.tr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+@media (max-width:800px){.tr{grid-template-columns:1fr}}
+.tcard{background:var(--sheet);border:1px solid var(--line);border-radius:18px;padding:22px}
+.tcard .big{font:800 30px/1.1 var(--display)}
+.tcard p{margin:8px 0 0;color:var(--muted);font-size:15px}
+.ph{border:1.5px dashed var(--ph);background:var(--ph-tint)}
+.ph .lbl{font:600 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ph);margin-bottom:10px;display:block}
+.faq details{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:0 18px;margin-bottom:10px}
+.faq summary{cursor:pointer;list-style:none;padding:16px 0;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--muted);font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:0 0 16px;color:var(--muted)}
+.faq .phx{color:var(--ph);font-weight:600}
+.final{margin-top:44px;padding:36px;border-radius:22px;background:var(--ink);color:var(--paper);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.final h3{font:800 clamp(22px,2.6vw,30px)/1.15 var(--display);margin:0;max-width:620px}
+.final p{margin:8px 0 0;opacity:.8;font-size:15px}
+
+/* rationale */
+.why{background:var(--ink);color:var(--paper);padding:80px 0}
+.why h2{color:var(--paper)}
+.why .sub{color:#b8bdc8}
+.reasons{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:800px){.reasons{grid-template-columns:1fr}}
+.rs{border:1px solid #2e333d;border-radius:18px;padding:22px;background:#1a1d24}
+.rs .h{display:flex;gap:10px;align-items:baseline;margin-bottom:10px}
+.rs .h a{font:600 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#8fb0ff;text-decoration:none;white-space:nowrap}
+.rs h3{margin:0;font:700 18px/1.3 var(--body)}
+.rs .was,.rs .now{font-size:15px;margin:6px 0 0;color:#c4c8d1}
+.rs .was b{color:#ff8d76}.rs .now b{color:#6fd99e}
+.tests{margin-top:36px;border:1px solid #2e333d;border-radius:18px;overflow:hidden}
+.tests div{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid #2e333d;font-size:15px}
+.tests div:last-child{border-bottom:0}
+.tests div.hd{font:600 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#9aa0ab;background:#1a1d24}
+@media (max-width:700px){.tests div{grid-template-columns:1fr;gap:4px}.tests div.hd{display:none}}
+.sign{margin-top:40px;display:flex;flex-wrap:wrap;gap:12px 28px;color:#b8bdc8;font-size:15px}
+.sign a{color:var(--paper)}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="wrap">
+  <span class="who">Тестовое · Система 10X · Диана Рая</span>
+  <nav><a href="#b1">Лендинг</a><a href="#why">Почему так</a><a href="https://raydiana17.github.io/">Портфолио ↗</a></nav>
+</div></div>
+
+<!-- ===== Блок 1. Первый экран ===== -->
+<section class="blk" id="b1"><div class="wrap">
+  <a class="tag" href="#r1"><b>01</b> Первый экран · почему так →</a>
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Модуль FBS · Wildberries</div>
+      <h1>Найдём, где ваш FBS <span class="leak">теряет деньги</span></h1>
+      <p class="lead">Штрафы фулфилмента, отмены, товар, который лежит на полке, но не виден покупателю, и остатки не на тех складах. 10X собирает это из кабинета по API и каждое утро показывает в рублях — за три минуты.</p>
+      <div class="ctas">
+        <a class="btn primary" href="https://system10x.ru/fbs-a" target="_blank" rel="noopener">Показать мои потери →</a>
+        <a class="btn ghost" href="https://system10x.ru/fbs-a" target="_blank" rel="noopener">▶ Видео, 15 мин</a>
+      </div>
+      <div class="note"><i></i><span><b>3 дня полного доступа считаются с момента, когда кабинет настроен.</b> Подключает менеджер вместе с вами — от вас только доступ к кабинету.</span></div>
+      <div class="trust"><span><b>1 500+</b> кабинетов подключено</span><span><b>Всё по API</b> — руками ничего</span><span><b>Входит в Систему 10X</b> — докупать не нужно</span></div>
+    </div>
+    <div class="summary" aria-label="Пример утренней сводки">
+      <header><b>Утренняя сводка</b><span>демо-кабинет</span></header>
+      <div class="leaks">
+        <button class="lk" data-go="0"><span class="n" data-count="2837724">0 ₽</span><span class="t">в день не видно покупателю: товар есть, но не объявлен в WB</span></button>
+        <button class="lk" data-go="1"><span class="n" data-count="36576">0 ₽</span><span class="t">штраф за отмены фулфилмента</span></button>
+        <button class="lk" data-go="2"><span class="n" data-count="400941">0 ₽</span><span class="t">можно вернуть, если собирать быстрее</span></button>
+        <button class="lk" data-go="3"><span class="n" data-count="18528216">0 ₽</span><span class="t">товара лежит не на том складе</span></button>
+      </div>
+      <footer>Нажмите на число — откроется, откуда оно взялось.</footer>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== Блок 2. 4 места, где утекают деньги ===== -->
+<section class="blk alt" id="b2"><div class="wrap">
+  <a class="tag" href="#r2"><b>02</b> Утечки · почему так →</a>
+  <h2>4 места, где FBS <span class="leak">теряет деньги</span></h2>
+  <p class="sub">Каждое число считается по данным вашего кабинета. Нажмите на утечку — увидите, как это выглядит в 10X.</p>
+  <div class="explorer">
+    <div class="tabs" role="tablist">
+      <button class="tb" role="tab" aria-selected="true" data-i="0"><span class="k">Невидимые остатки</span><span class="v">≈2,8 млн ₽ / день</span></button>
+      <button class="tb" role="tab" aria-selected="false" data-i="1"><span class="k">Отмены фулфилмента</span><span class="v">36 576 ₽ штрафа</span></button>
+      <button class="tb" role="tab" aria-selected="false" data-i="2"><span class="k">Скорость сборки</span><span class="v">+400 941 ₽</span></button>
+      <button class="tb" role="tab" aria-selected="false" data-i="3"><span class="k">Не тот склад</span><span class="v">18,5 млн ₽</span></button>
+    </div>
+    <div class="panel" role="tabpanel">
+      <h3 id="p-h"></h3>
+      <p id="p-t"></p>
+      <div class="do" id="p-d"></div>
+      <div class="shot"><img id="p-img" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+    </div>
+  </div>
+  <div class="more"><em>Ещё 8 вкладок:</em><span>Потери за период</span><span>Заказы по складам</span><span>Путь до ПВЗ</span><span>Маржа по складу</span><span>Претензии</span><span>Недосдано</span><span>Расходы ФФ</span><span>Сводка</span></div>
+</div></section>
+
+<!-- ===== Блок 3. Чего не видно в кабинете WB ===== -->
+<section class="blk" id="b3"><div class="wrap">
+  <a class="tag" href="#r3"><b>03</b> Отличие от кабинета · почему так →</a>
+  <h2>Зачем 10X, если есть кабинет WB</h2>
+  <p class="sub">Кабинет показывает продажи. 10X отвечает на вопросы, ради которых селлеры сидят в выгрузках и таблицах.</p>
+  <table class="cmp">
+    <thead><tr><th>Вопрос селлера</th><th>Без 10X</th><th>В 10X</th></tr></thead>
+    <tbody>
+      <tr><td>Сколько товара лежит на фулфилменте, но не виден покупателю?</td><td>Сверять остатки ФФ с WB вручную</td><td>Две цифры рядом по каждому товару и складу</td></tr>
+      <tr><td>Какой фулфилмент отменяет заказы и на какой штраф?</td><td>Искать по финотчёту</td><td>Отмены и штрафы с разбивкой по складам</td></tr>
+      <tr><td>На каком складе товар зарабатывает больше?</td><td>Считать маржу в таблице</td><td>Маржа по каждому складу: например, 17,2% против 25,1% на FBW</td></tr>
+      <tr><td>Куда везти поставку?</td><td>На глаз по продажам</td><td>Доля заказов против доли остатка: склад даёт 49% заказов, а хранит 9%</td></tr>
+      <tr><td>Что площадка удержала вопреки оферте?</td><td>Разбирать удержания построчно</td><td>Вкладка «Претензии» — список готов</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<!-- ===== Блок 4. Как начать ===== -->
+<section class="blk alt" id="b4"><div class="wrap">
+  <a class="tag" href="#r4"><b>04</b> Как начать · почему так →</a>
+  <h2>Как начать</h2>
+  <p class="sub">Подключение берём на себя. Тестовые дни не тратятся на настройку.</p>
+  <div class="steps">
+    <div class="step"><h3>Пишете в Telegram</h3><p>Менеджер подключает кабинет по API Wildberries. Заполнять руками ничего не нужно.</p></div>
+    <div class="step"><h3>Настраиваем склады вместе</h3><p>Отмечаем ваши фулфилменты и склады. Пока идёт настройка, тест не начинается.</p></div>
+    <div class="step go"><h3>3 дня полного доступа</h3><p>Данные подтягиваются за прошлый период, поэтому потери видно в первый же день. Дальше решаете сами.</p></div>
+  </div>
+</div></section>
+
+<!-- ===== Блок 5. Доверие, вопросы, CTA ===== -->
+<section class="blk" id="b5"><div class="wrap">
+  <a class="tag" href="#r5"><b>05</b> Доверие и вопросы · почему так →</a>
+  <h2>Почему 10X доверяют кабинеты</h2>
+  <p class="sub">Жёлтые карточки — места под ваши данные: их на текущем сайте нет, а селлеру они нужны до подключения.</p>
+  <div class="tr">
+    <div class="tcard"><div class="big">1 500+</div><p>кабинетов селлеров уже подключены к Системе 10X</p></div>
+    <div class="tcard ph"><span class="lbl">Нужно от 10X</span><div class="big">Кейс</div><p>Селлер, оборот, что нашли за первую неделю и сколько вернули в рублях</p></div>
+    <div class="tcard ph"><span class="lbl">Нужно от 10X</span><div class="big">Отзыв</div><p>Имя, магазин и одна фраза: что изменилось после подключения</p></div>
+  </div>
+  <div class="faq">
+    <details open><summary>Сколько стоит после теста?</summary><p>Модуль FBS входит в Систему 10X — докупать его не нужно. <span class="phx">[Цена тарифа — от 10X]</span></p></details>
+    <details><summary>Что, если за 3 дня не успею разобраться?</summary><p>Срок идёт только после настройки, а менеджер помогает с первого шага. Данные за прошлый период видны сразу, поэтому ждать накопления не нужно.</p></details>
+    <details><summary>Безопасно ли давать доступ к кабинету?</summary><p>Подключение идёт через официальный API Wildberries. <span class="phx">[Какие права даёт ключ — уточнить у 10X]</span></p></details>
+    <details><summary>Работает ли с Ozon?</summary><p>Система 10X работает с Wildberries и Ozon; модуль FBS на этой странице — для Wildberries.</p></details>
+  </div>
+  <div class="final">
+    <div><h3>Посмотрите, сколько теряет ваш FBS — в первый же день теста</h3><p>Подключение через Telegram, менеджер настроит вместе с вами.</p></div>
+    <a class="btn primary" href="https://system10x.ru/fbs-a" target="_blank" rel="noopener">Показать мои потери →</a>
+  </div>
+</div></section>
+
+<!-- ===== Обоснование ===== -->
+<section class="why" id="why"><div class="wrap">
+  <h2>Почему этот вариант сработает лучше</h2>
+  <p class="sub">Тот же продукт, те же цифры и скрины — другая подача. Главное: страница продаёт не функции, а деньги, которые селлер найдёт в первый день.</p>
+  <div class="reasons">
+    <div class="rs" id="r1"><div class="h"><a href="#b1">01 ↑</a><h3>Оффер — про деньги, а не про функции</h3></div>
+      <p class="was"><b>Сейчас:</b> «Управляйте продажами FBS: остаток, сроки сборки, маржа, отмены» — список разделов. Селлер не понимает, что получит.</p>
+      <p class="now"><b>Предлагаю:</b> «Найдём, где ваш FBS теряет деньги». Рядом — сводка с четырьмя суммами. Ценность понятна за 5 секунд, кнопка «Показать мои потери» обещает результат, а не процесс.</p></div>
+    <div class="rs" id="r1b"><div class="h"><a href="#b1">01 ↑</a><h3>Триал продаётся как бесплатный аудит</h3></div>
+      <p class="was"><b>Сейчас:</b> «3 дня бесплатно» при сложном подключении выглядит как мало. Что срок стартует после настройки, написано серым мелким шрифтом.</p>
+      <p class="now"><b>Предлагаю:</b> условие вынесено в заметную плашку, а в шагах сказано главное: данные за прошлый период, потери видно в первый день. Те же 3 дня перестают пугать.</p></div>
+    <div class="rs" id="r2"><div class="h"><a href="#b2">02 ↑</a><h3>9 одинаковых блоков → 4 утечки с переключением</h3></div>
+      <p class="was"><b>Сейчас:</b> девять блоков «заголовок + скрин» подряд, самое сильное — суммы в рублях — спрятано в подписях.</p>
+      <p class="now"><b>Предлагаю:</b> четыре главные утечки, сумма крупно, по клику — объяснение, что делать, и скрин как доказательство. Остальные 8 вкладок — строкой ниже. Короче скролл, больше динамики.</p></div>
+    <div class="rs" id="r3"><div class="h"><a href="#b3">03 ↑</a><h3>Ответ на «зачем, если есть кабинет WB»</h3></div>
+      <p class="was"><b>Сейчас:</b> на главное возражение селлера страница не отвечает.</p>
+      <p class="now"><b>Предлагаю:</b> таблица «вопрос селлера — без 10X — в 10X». Сравнение с ручной работой, а не нападки на WB.</p></div>
+    <div class="rs" id="r4"><div class="h"><a href="#b4">04 ↑</a><h3>Понятный путь вместо «напишите в Telegram»</h3></div>
+      <p class="was"><b>Сейчас:</b> кнопка ведёт в бот без объяснения, что будет дальше.</p>
+      <p class="now"><b>Предлагаю:</b> три шага с концом в виде результата. Человек знает, сколько усилий от него нужно, и охотнее пишет.</p></div>
+    <div class="rs" id="r5"><div class="h"><a href="#b5">05 ↑</a><h3>Доверие до подключения</h3></div>
+      <p class="was"><b>Сейчас:</b> из доверия — только «1 500+ кабинетов». Нет кейсов, отзывов, цены и ответа про безопасность данных, а просят доступ ко всему кабинету.</p>
+      <p class="now"><b>Предлагаю:</b> кейс, отзыв, цена и права ключа в FAQ. Это места под ваши данные — придумывать их я не стала.</p></div>
+  </div>
+
+  <h2 style="margin-top:56px;font-size:clamp(22px,2.6vw,30px)">Что проверила бы первым</h2>
+  <div class="tests">
+    <div class="hd"><span>Гипотеза</span><span>Вариант</span><span>Метрика</span></div>
+    <div><span>Оффер первого экрана</span><span>«Найдём, где теряете деньги» против текущего</span><span>Клик в Telegram → подключённый кабинет</span></div>
+    <div><span>Текст кнопки</span><span>«Показать мои потери» против «Попробовать 3 дня»</span><span>CTR кнопки, доля дошедших до настройки</span></div>
+    <div><span>Длина теста</span><span>3 дня против 7 дней после настройки</span><span>Конверсия теста в оплату, а не только в подключение</span></div>
+    <div><span>Сумма в оффере</span><span>Пример из демо против «ваши потери за 30 дней» сразу после подключения</span><span>Доля подключивших кабинет</span></div>
+  </div>
+
+  <div class="sign"><span>Диана Рая · growth-маркетолог</span><a href="https://t.me/di_jobka">Telegram @di_jobka</a><a href="https://raydiana17.github.io/">Портфолио</a></div>
+</div></section>
+
+<script>
+const D=[
+ {h:'Товар лежит на полке, а покупатель видит «нет в наличии»',t:'Две цифры рядом по каждому товару и складу: что физически есть на фулфилменте и что видит в наличии WB. В демо-кабинете не объявлено 857 329 шт.',d:'<b>Что делать:</b> объявить остатки в WB по списку — товары с наибольшей потерей сверху.',img:'https://system10x.ru/_astro/fbs-matrix.D1CIzntf_LpTaY.webp'},
+ {h:'Сколько отменил фулфилмент и на какой штраф',t:'Разрез по складам показывает, какой фулфилмент не справляется, отменяет задания и создаёт вам штрафы. В демо: 80 заданий и 36 576 ₽ штрафа из финотчёта.',d:'<b>Что делать:</b> предъявить фулфилменту цифры или перевести объём на склад, который не срывает сборку.',img:'https://system10x.ru/_astro/fbs-cancellations.CJ6hLVN1_seEv.webp'},
+ {h:'Заработано скидкой или потеряно на комиссии',t:'Скорость сборки влияет на комиссию WB. По каждому складу видно, сколько заданий попадает в лучшую зону — в демо лишь 4,5%.',d:'<b>Что делать:</b> ускорить сборку на складах с медленной обработкой — это ещё 400 941 ₽.',img:'https://system10x.ru/_astro/fbs-commission.B4IkQjjg_Zv9p8H.webp'},
+ {h:'Склад даёт 49% заказов, а хранит 9% остатка',t:'Перекос считается в долях, а не в штуках; склад-донор оставляет запас на свои продажи в днях.',d:'<b>Что делать:</b> перевезти остаток по готовому расчёту — в демо 18 528 216 ₽ лежит не на том складе.',img:'https://system10x.ru/_astro/fbs-where-to-ship.BOj8_BQz_Z2sdHyO.webp'}];
+const tabs=[...document.querySelectorAll('.tb')];
+function show(i){tabs.forEach((t,k)=>t.setAttribute('aria-selected',k===i));const x=D[i];
+ document.getElementById('p-h').textContent=x.h;document.getElementById('p-t').textContent=x.t;document.getElementById('p-d').innerHTML=x.d;
+ const im=document.getElementById('p-img');im.parentNode.style.display='';im.src=x.img;im.alt=x.h;}
+tabs.forEach(t=>t.addEventListener('click',()=>show(+t.dataset.i)));show(0);
+document.querySelectorAll('.lk').forEach(b=>b.addEventListener('click',()=>{show(+b.dataset.go);document.getElementById('b2').scrollIntoView({behavior:'smooth'});}));
+const fmt=n=>Math.round(n).toLocaleString('ru-RU')+' ₽';
+const nums=[...document.querySelectorAll('[data-count]')];
+const run=()=>{const t0=performance.now();const step=t=>{const p=Math.min(1,(t-t0)/1400),e=1-Math.pow(1-p,3);nums.forEach(n=>n.textContent=fmt(n.dataset.count*e));if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)};
+if(matchMedia('(prefers-reduced-motion: reduce)').matches) nums.forEach(n=>n.textContent=fmt(+n.dataset.count)); else run();
+</script>
+</body>
+</html>
